@@ -27,3 +27,5 @@ dotnet run
 2. 修改 `TaskTemplate` 和 `PrimaryButtonStyle`，理解模板与样式边界。
 3. 给 `RatingBadge` 增加新依赖属性（比如 `CornerRadius`），并在模板中使用。
 4. 给 `HoverHelper` 增加附加属性参数，控制悬停边框颜色。
+
+# 新增了git
