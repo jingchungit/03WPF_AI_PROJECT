@@ -10,48 +10,50 @@ using WpfXamlPlayground.Infrastructure;
 using WpfXamlPlayground.Models;
 
 namespace WpfXamlPlayground.ViewModels;
-//MainViewModel的作用
-//1.	任务列表管理
-//    public ObservableCollection<TaskItem> Tasks { get; }
-//2.	用户操作响应
-//public ICommand AddTaskCommand { get; }
-//private void AddTask() { /* 添加新任务逻辑 */ }
-//3.	界面状态同步
-//public bool IsPrimaryTheme { get; set; }
+//----------------------------------MainViewModel的作用----------------------------------
+        //1.	任务列表管理
+        //    public ObservableCollection<TaskItem> Tasks { get; }
+        //2.	用户操作响应
+        //public ICommand AddTaskCommand { get; }
+        //private void AddTask() { /* 添加新任务逻辑 */ }
+        //3.	界面状态同步
+        //public bool IsPrimaryTheme { get; set; }
+
+        //在 WPF MVVM 模式中，ViewModel 与 View 是分离的。当 ViewModel 中的数据发生变化时，需要一种机制通知 View 更新界面：
+        //┌─────────────┐    数据变更    ┌─────────────┐
+        //│ ViewModel   │ ────────────→ │    View     │
+        //│ (数据层)    │   事件通知     │  (界面层)   │
+        //└─────────────┘               └─────────────┘
+        //       ▲
+        //       │
+        //  INotifyPropertyChanged
+        //INotifyPropertyChanged 接口只要求实现一个事件：
+        //// 接口定义
+        //public event PropertyChangedEventHandler? PropertyChanged;
+
+        //// 你的实现
+        //public event PropertyChangedEventHandler? PropertyChanged;
+
+        //// 触发通知的方法
+        //private void OnPropertyChanged([CallerMemberName] string? propertyName = null) =>
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
 
-//在 WPF MVVM 模式中，ViewModel 与 View 是分离的。当 ViewModel 中的数据发生变化时，需要一种机制通知 View 更新界面：
-//┌─────────────┐    数据变更    ┌─────────────┐
-//│ ViewModel   │ ────────────→ │    View     │
-//│ (数据层)    │   事件通知     │  (界面层)   │
-//└─────────────┘               └─────────────┘
-//       ▲
-//       │
-//  INotifyPropertyChanged
-//INotifyPropertyChanged 接口只要求实现一个事件：
-//// 接口定义
-//public event PropertyChangedEventHandler? PropertyChanged;
-
-//// 你的实现
-//public event PropertyChangedEventHandler? PropertyChanged;
-
-//// 触发通知的方法
-//private void OnPropertyChanged([CallerMemberName] string? propertyName = null) =>
-//    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-public class MainViewModel : INotifyPropertyChanged  //ViewModel层
+//ViewModel层
+public class MainViewModel : INotifyPropertyChanged  
 {
-    //缓存命令实例
+    // ----------------------------------缓存命令实例----------------------------------
     //•	这两个字段用于缓存命令实例（RelayCommand 是自定义的 ICommand 实现）。
     //•	使用 readonly 表示它们只能在构造函数中赋值，之后不可变。
     private readonly RelayCommand completeSelectedCommand;
     private readonly RelayCommand broadcastCommand;
     //支持数据绑定的后备字段（backing fields）,每个都对应一个 public 属性（在后面定义），
-    //字段 用途说明
-    //noteText 双向绑定文本框内容，用户修改会更新此字段，反之亦然
-    //broadcastText   广播消息的输入内容
-    //receiverA / receiverB 接收广播消息的显示文本
-    //selectedTask 当前在 UI 中选中的任务项（如 ListBox 选中项）
-    //isPrimaryTheme 控制当前使用主主题还是备选主题（用于动态切换样式）
+    //字段                           用途说明
+    //noteText                      双向绑定文本框内容，用户修改会更新此字段，反之亦然
+    //broadcastText                 广播消息的输入内容
+    //receiverA / receiverB         接收广播消息的显示文本
+    //selectedTask                  当前在 UI 中选中的任务项（如 ListBox 选中项）
+    //isPrimaryTheme                控制当前使用主主题还是备选主题（用于动态切换样式）
     private string noteText = "修改我试试双向绑定";
     private string broadcastText = "这是一条广播消息";
     private string receiverA = "等待消息...";
@@ -61,7 +63,7 @@ public class MainViewModel : INotifyPropertyChanged  //ViewModel层
 
     public MainViewModel()
     {
-        //ObservableCollection<GroupDescription>是什么？
+        //---------------------------ObservableCollection<GroupDescription>是什么？----------------------------------
         //这是一个 泛型集合，专门用来存储 GroupDescription 类型的对象（比如 PropertyGroupDescription），并且：
         //•	✅ 支持通知机制：当集合内容发生变化（如添加、删除分组规则）时，会自动通知 UI 更新。
         //•	✅ 是 WPF 集合视图（ICollectionView）的一部分：你通过 TaskView.GroupDescriptions 访问的就是这个集合。
@@ -82,17 +84,14 @@ public class MainViewModel : INotifyPropertyChanged  //ViewModel层
             new() { Title = "试试触发器和动画", Category = "Triggers", Priority = 2, IsDone = false }
         };
 
-        TaskView = CollectionViewSource.GetDefaultView(Tasks);
-        TaskView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(TaskItem.Category)));
-        //•	TaskView 是 ICollectionView 类型。
-        //•	它的 GroupDescriptions 属性就是 ObservableCollection<GroupDescription>。
-        //•	调用.Add(...) 后：
-        //•	分组规则被加入集合；
-        //•	因为是 ObservableCollection，WPF 自动收到“集合变更”通知；
-        //•	视图立即按新规则重新分组数据；
-        //•	如果 XAML 支持分组显示，UI 会立刻更新。
+        // ---------------------------分组与多级分组----------------------------------
+        TaskView = CollectionViewSource.GetDefaultView(Tasks); // 创建视图（不修改原始数据）
+        TaskView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(TaskItem.Category)));// 添加分组规则：按 Category 属性分组
+        //•	TaskView 是 ICollectionView 类型。它的 GroupDescriptions 属性就是 ObservableCollection<GroupDescription>。
+        //调用.Add(...) 后：分组规则被加入集合；因为是 ObservableCollection，WPF 自动收到“集合变更”通知；
+        //视图立即按新规则重新分组数据；如果 XAML 支持分组显示，UI 会立刻更新。
 
-
+        // ---------------------------分组知识----------------------------------
         //按 TaskItem 对象的 Category 属性值对任务列表进行分组。
         //1.ICollectionView 与分组
         //TaskView 是通过 CollectionViewSource.GetDefaultView(Tasks) 获取的 ICollectionView 视图。WPF 的集合视图（如 ListCollectionView）支持排序、筛选和分组，而无需修改原始数据源（Tasks）。
@@ -107,45 +106,44 @@ public class MainViewModel : INotifyPropertyChanged  //ViewModel层
         //    •	并为每组显示一个组标题（如 “Dependency”、“Resources”）。
 
         //ObservableCollection<GroupDescription> 的优势：
-        //   特性                说明
-        //   自动通知         添加/ 移除分组规则 → UI 自动更新
-        //   动态分组         可以在运行时切换分组方式（比如从按 Category 改为按 Priority）
-        //   与 MVVM 兼容 符合“数据驱动 UI”的原则
+        //   特性                   说明
+        //   自动通知               添加/ 移除分组规则 → UI 自动更新
+        //   动态分组               可以在运行时切换分组方式（比如从按 Category 改为按 Priority）
+        //   与 MVVM 兼容          符合“数据驱动 UI”的原则
         //场景：用户点击按钮切换分组方式
-        // 清除当前分组
-        //TaskView.GroupDescriptions.Clear();
+                // 清除当前分组   TaskView.GroupDescriptions.Clear();
 
         //// 改为按优先级分组
         //TaskView.GroupDescriptions.Add(
         //    new PropertyGroupDescription(nameof(TaskItem.Priority))
         //);
 
+// -----------------------------------命令-------------------------------------------------------
         //初始化命令（Commands）这是 WPF MVVM 模式中处理用户交互（如按钮点击）的核心机制。我们逐行详细解释：
         //🧩 背景知识：什么是 RelayCommand？
         AddTaskCommand = new RelayCommand(_ => AddTask());
         //_ 表示忽略传入的参数（因为 AddTask() 不需要参数）
         //当命令执行时，会调用 AddTask() 方法
         
-        
         completeSelectedCommand = new RelayCommand(
             _ => CompleteSelected(),
             _ => SelectedTask is not null && !SelectedTask.IsDone);
         CompleteSelectedCommand = completeSelectedCommand; //私有化
         /*参数 1：_ => CompleteSelected()
-        作用：当命令执行时要运行的方法
+            作用：当命令执行时要运行的方法
             含义：调用 CompleteSelected() 方法（把选中的任务标记为已完成）
         _：忽略传入的参数（因为不需要 CommandParameter）
         参数 2：_ => SelectedTask is not null && !SelectedTask.IsDone
-        作用：判断命令当前是否可用（决定按钮是否禁用）
-        含义：只有满足以下两个条件时，命令才可用：
-            ✅ SelectedTask is not null - 有选中的任务
-            ✅ !SelectedTask.IsDone - 该任务尚未完成*/
-        // 命令状态何时刷新？SelectedTask
+            作用：判断命令当前是否可用（决定按钮是否禁用）
+            含义：只有满足以下两个条件时，命令才可用：
+                ✅ SelectedTask is not null - 有选中的任务
+                ✅ !SelectedTask.IsDone - 该任务尚未完成*/
+        // 命令状态何时刷新？SelectedTask 不为空且 !SelectedTask.IsDone
         
             
         // 参数 1：_ => BroadcastMessage()
         // 作用：当用户点击按钮时执行的方法
-        //     调用：BroadcastMessage() 方法（第 274-278 行定义）
+        //     调用：BroadcastMessage() 方法广播消息（第 274-278 行定义）
         // 参数 2：_ => !string.IsNullOrWhiteSpace(BroadcastText)
         // 启用条件：只有当 BroadcastText 不为空且不只包含空格时，命令才可用。
         broadcastCommand = new RelayCommand(
@@ -181,7 +179,8 @@ public class MainViewModel : INotifyPropertyChanged  //ViewModel层
     // 定义: 广播消息的命令(发布-订阅模式)
     public ICommand BroadcastMessageCommand { get; }
 
-    // 定义: 笔记文本
+    
+    // 定义: 数据绑定的笔记文本
     public string NoteText
     {
         get => noteText;
@@ -198,7 +197,7 @@ public class MainViewModel : INotifyPropertyChanged  //ViewModel层
     }
 
     
-    // 🔄 命令状态何时刷新？
+
    // 1.SelectedTask 属性被更新
    //  2.调用 RaiseCanExecuteChanged() 通知 WPF 重新检查命令状态 
    //      3.按钮自动启用或禁用
@@ -234,7 +233,7 @@ public class MainViewModel : INotifyPropertyChanged  //ViewModel层
             broadcastCommand.RaiseCanExecuteChanged();
         }
     }
-//定义接受消息
+    //定义接受消息
     public string ReceiverA
     {
         get => receiverA;
@@ -299,7 +298,7 @@ public class MainViewModel : INotifyPropertyChanged  //ViewModel层
         });
     }
 
-    //TODO
+    
     // 1. IsDone 属性被修改
     // ↓
     // 2. TaskItem 类触发 OnPropertyChanged("IsDone")
@@ -347,7 +346,7 @@ public class MainViewModel : INotifyPropertyChanged  //ViewModel层
     private void OnPropertyChanged([CallerMemberName] string? propertyName = null) =>
         //触发事件(调用所有订阅者)
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
+    
     //1. [CallerMemberName] 特性
     //[CallerMemberName]
     //string? propertyName = null
@@ -355,10 +354,10 @@ public class MainViewModel : INotifyPropertyChanged  //ViewModel层
     //    •	好处：无需手动传参，避免写错字符串
     //// 在 NoteText 属性中调用
     //OnPropertyChanged();  // 自动传入 "NoteText"
-
     //// 等价于
     //OnPropertyChanged("NoteText");  // 手动传入
 
+    
     //2. 空条件运算符?.
     //PropertyChanged?.Invoke(...)
     //•	作用：只有当 PropertyChanged 不为 null 时才触发

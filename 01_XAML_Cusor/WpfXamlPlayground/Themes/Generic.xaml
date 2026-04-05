@@ -15,7 +15,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:RatingBadge}">
-                    <!--容器 Border-->
+                    <!--外形容器 Border-->
                     <!--CornerRadius="18"：把矩形变成胶囊形-->
                     <!--Background="{TemplateBinding BadgeBrush}"：动态背景色。-->
                     <!--TemplateBinding 是一种高效的绑定，它把外部的 BadgeBrush 属性直接传给内部的 Background。-->

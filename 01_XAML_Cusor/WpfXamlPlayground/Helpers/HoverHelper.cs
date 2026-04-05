@@ -10,35 +10,34 @@ namespace WpfXamlPlayground.Helpers;
 
 public static class HoverHelper
 {
-    //附加属性使用流程：
-// 1. 定义附加属性(C#)
-//   ↓
-//2. 注册 DependencyProperty
-//   ↓
-//3. 提供 Setter/Getter 方法
-//   ↓
-//4. 实现变化回调逻辑
-//   ↓
-//5. XAML 中使用
-//   ↓
-//6. 运行时生效
+            //附加属性使用流程：
+        // 1. 定义附加属性(C#)
+        //   ↓
+        //2. 注册 DependencyProperty
+        //   ↓
+        //3. 提供 Setter/Getter 方法
+        //   ↓
+        //4. 实现变化回调逻辑
+        //   ↓
+        //5. XAML 中使用
+        //   ↓
+        //6. 运行时生效
 
 
     // 1. 定义附加属性
     public static readonly DependencyProperty HighlightOnHoverProperty =
         DependencyProperty.RegisterAttached(
-            //RegisterAttached    注册附加属性  HoverHelper.HighlightOnHover
-            "HighlightOnHover",
+            "HighlightOnHover",   //RegisterAttached    注册附加属性  HoverHelper.HighlightOnHover
             typeof(bool),
             typeof(HoverHelper),
             new PropertyMetadata(false, OnHighlightOnHoverChanged));
-    // "HighlightOnHover"	属性名（XAML 中使用时不带 Property 后缀）
-    //typeof(bool) 属性值类型
-    //typeof(HoverHelper) 定义该属性的类
-    //参数 4：元数据
-    //false	默认值
-    //OnHighlightOnHoverChanged   属性变化时的回调方法
-
+            // HighlightOnHover	           属性名（XAML 中使用时不带 Property 后缀）
+            //typeof(bool)                 属性值类型
+            //typeof(HoverHelper)          定义该属性的类
+            //参数 4：                      元数据
+                    //false	                       默认值
+                    //OnHighlightOnHoverChanged    属性变化时的回调方法
+            
     // 3. 获取器
     public static bool GetHighlightOnHover(DependencyObject obj) =>
         (bool)obj.GetValue(HighlightOnHoverProperty);
@@ -50,12 +49,12 @@ public static class HoverHelper
     // 4. 属性变化时的处理逻辑
     private static void OnHighlightOnHoverChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
-    //d DependencyObject    设置了附加属性的对象（如 Border、Button）
+    //d DependencyObject                    设置了附加属性的对象（如 Border、Button）
     //e DependencyPropertyChangedEventArgs  属性变化的详细信息
     //参数 e 的重要属性
     // e.OldValue  // 旧值（变化前的值）
     //e.NewValue  // 新值（变化后的值）
-        if (d is not Control control)
+        if (d is not Control control)//否定模式匹配
         {
             return;
         }

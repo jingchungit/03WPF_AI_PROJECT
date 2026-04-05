@@ -5,10 +5,10 @@ using System.Windows.Media;
 namespace WpfXamlPlayground.Controls;
 
 // 第 1 步：C# 代码中声明
-public class RatingBadge : Control
+public class RatingBadge : Control   // 继承自 Control 基类
 {
     // 静态构造函数：建立“身份认证
-    /*在 WPF 自定义控件中，构造函数必须是静态的（static）*/
+    
     /*
      *1. 避免“重复注册”报错
      * DefaultStyleKeyProperty.OverrideMetadata 这行代码的作用是向 WPF 系统注册：“嘿，RatingBadge 这个类型的默认样式在这里找。”
@@ -23,29 +23,24 @@ public class RatingBadge : Control
         线程安全：即使多个线程同时创建控件，它也只会安全地执行一次。
         优先执行：它会在任何实例创建之前执行，确保“规矩”先定好，再开始“干活”。
      */
+   // ⭐ 静态构造函数：告诉 WPF "我的样式在 Generic.xaml" /*在 WPF 自定义控件中，构造函数必须是静态的（static）*/
     static RatingBadge()
     {
         // ⭐ 关键代码：告诉 WPF "我的默认样式在 Generic.xaml 中"
         DefaultStyleKeyProperty.OverrideMetadata(typeof(RatingBadge), new FrameworkPropertyMetadata(typeof(RatingBadge)));
     }
 
-    // Score 属性：分数的“存取窗口
+    // 依赖属性1：Score 属性：分数的“存取窗口
     public int Score
     {
         get => (int)GetValue(ScoreProperty);
         set => SetValue(ScoreProperty, value);
     }
-
-    // Score 属性依赖属性注册
-    /*支持绑定：因为有了它，你才能在 XAML 里写 {Binding Priority}。
-    支持动画：WPF 知道怎么平滑地改变这个数值。
-    默认值：如果你不设置分数，它默认显示 60。
-     */
     public static readonly DependencyProperty ScoreProperty =
         DependencyProperty.Register(nameof(Score), typeof(int), typeof(RatingBadge), new PropertyMetadata(60));
 
-    /*BadgeBrush 属性：颜色的“存取窗口” */
-    // // 类型是画刷（颜色）  效果：让你能在 XAML 里通过 BadgeBrush="Red" 或者绑定主题色来动态改变徽章的颜色。
+    /*依赖属性2： BadgeBrush 属性：背景颜色（默认钢蓝色） 颜色的“存取窗口” */
+    //类型是画刷（颜色）  效果：让你能在 XAML 里通过 BadgeBrush="Red" 或者绑定主题色来动态改变徽章的颜色。
     public Brush BadgeBrush
     {
         get => (Brush)GetValue(BadgeBrushProperty);

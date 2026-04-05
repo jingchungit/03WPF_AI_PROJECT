@@ -3,14 +3,14 @@ using System.Windows.Controls;
 using System.Windows.Data;
 
 namespace WpfXamlPlayground.Converters;
-/// <summary>
+
 /// 1.BoolToStatusTextConverter
-/// 作用：将bool值转换为中文状态文本
+/// 作用：将bool值转换为中文状态文本的转换器
 /// 用处：状态转换
 /// 1.定义转换器类
- //2.再XAMK中声明
-//3.绑定中引用转换器
-/// </summary>
+  //2.再XAMK中声明
+  //3.绑定中引用转换器
+
 //参数：
 //参数 类型  含义 当前代码中的用法
 //value object                  绑定源的值（原始数据）	接收 IsDone 的 bool 值
