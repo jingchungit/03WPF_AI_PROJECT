@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+</Project>
+<!--
+1. 项目 SDK
+2. 输出类型 
+WinExe	Windows 桌面应用程序	编译后生成 .exe 文件，无控制台窗口
+💡 其他可选值：Exe（控制台应用）、Library（类库）
+3. 目标框架
+net10.0-windows	目标框架为 .NET 10.0，仅支持 Windows 平台
+4. 可空引用类型
+enable	启用可空引用类型检查	编译器会警告可能的 NullReferenceException
+string? name = null;  // ✅ 允许
+string title = null;  // ⚠️ 编译警告
+5. 隐式 Using
+<ImplicitUsings>enable</ImplicitUsings>
+enable	自动引入常用命名空间	无需手动写 using 语句
+ using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+// ... 等常用命名空间
+ 
+6. 启用 WPF
+true	启用 WPF 框架支持	自动引用 WPF 相关程序集，支持 XAML 编译
+•	PresentationCore
+•	PresentationFramework
+•	WindowsBase
+•	System.Xaml
+-->

@@ -1,0 +1,182 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|c:\\users\\lucien\\desktop\\project\\03wpf_ai\\01_xaml_cusor\\wpfxamlplayground\\infrastructure\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|solutionrelative:infrastructure\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|c:\\users\\lucien\\desktop\\project\\03wpf_ai\\01_xaml_cusor\\wpfxamlplayground\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|solutionrelative:viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|c:\\users\\lucien\\desktop\\project\\03wpf_ai\\01_xaml_cusor\\wpfxamlplayground\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|c:\\users\\lucien\\desktop\\project\\03wpf_ai\\01_xaml_cusor\\wpfxamlplayground\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|c:\\users\\lucien\\desktop\\project\\03wpf_ai\\01_xaml_cusor\\wpfxamlplayground\\themes\\generic.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|solutionrelative:themes\\generic.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|c:\\users\\lucien\\desktop\\project\\03wpf_ai\\01_xaml_cusor\\wpfxamlplayground\\controls\\ratingbadge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|solutionrelative:controls\\ratingbadge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|c:\\users\\lucien\\desktop\\project\\03wpf_ai\\01_xaml_cusor\\wpfxamlplayground\\converters\\booltostatustextconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|solutionrelative:converters\\booltostatustextconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|c:\\users\\lucien\\desktop\\project\\03wpf_ai\\01_xaml_cusor\\wpfxamlplayground\\infrastructure\\messagehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|solutionrelative:infrastructure\\messagehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|c:\\users\\lucien\\desktop\\project\\03wpf_ai\\01_xaml_cusor\\wpfxamlplayground\\helpers\\hoverhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|solutionrelative:helpers\\hoverhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|c:\\users\\lucien\\desktop\\project\\03wpf_ai\\01_xaml_cusor\\wpfxamlplayground\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{17A6C85E-0AD0-6A67-3828-A4D8F9A44F0A}|WpfXamlPlayground.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MainViewModel.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAD4v3wAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T04:25:15.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\Infrastructure\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\RelayCommand.cs",
+              "ToolTip": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\Infrastructure\\RelayCommand.cs",
+              "RelativeToolTip": "Infrastructure\\RelayCommand.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAowCkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-05T03:52:21.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MessageHub.cs",
+              "DocumentMoniker": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\Infrastructure\\MessageHub.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\MessageHub.cs",
+              "ToolTip": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\Infrastructure\\MessageHub.cs",
+              "RelativeToolTip": "Infrastructure\\MessageHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-03T13:09:03.027Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAD4vxAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-03T13:08:40.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-03T05:04:48.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BoolToStatusTextConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\Converters\\BoolToStatusTextConverter.cs",
+              "RelativeDocumentMoniker": "Converters\\BoolToStatusTextConverter.cs",
+              "ToolTip": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\Converters\\BoolToStatusTextConverter.cs",
+              "RelativeToolTip": "Converters\\BoolToStatusTextConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-03T14:44:56.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RatingBadge.cs",
+              "DocumentMoniker": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\Controls\\RatingBadge.cs",
+              "RelativeDocumentMoniker": "Controls\\RatingBadge.cs",
+              "ToolTip": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\Controls\\RatingBadge.cs",
+              "RelativeToolTip": "Controls\\RatingBadge.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-03T14:44:58.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Generic.xaml",
+              "DocumentMoniker": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\Themes\\Generic.xaml",
+              "RelativeDocumentMoniker": "Themes\\Generic.xaml",
+              "ToolTip": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\Themes\\Generic.xaml",
+              "RelativeToolTip": "Themes\\Generic.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-03T14:45:05.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HoverHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\Helpers\\HoverHelper.cs",
+              "RelativeDocumentMoniker": "Helpers\\HoverHelper.cs",
+              "ToolTip": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\Helpers\\HoverHelper.cs",
+              "RelativeToolTip": "Helpers\\HoverHelper.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-03T13:08:57.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\Lucien\\Desktop\\project\\03WPF_AI\\01_XAML_Cusor\\WpfXamlPlayground\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-04-03T05:07:24.663Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

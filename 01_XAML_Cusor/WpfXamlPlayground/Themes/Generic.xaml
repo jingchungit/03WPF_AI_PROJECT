@@ -1,0 +1,62 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:WpfXamlPlayground.Controls">
+
+    <!-- ② 定义样式，TargetType 指向自定义控件类型 -->
+    <Style TargetType="{x:Type controls:RatingBadge}">
+        <Setter Property="Width" Value="120" />
+        <Setter Property="Height" Value="36" />
+        <!--设置复杂属性的标准写法-->
+        <!--Setter：设置器。在样式（Style）中用来给控件的属性赋值。
+            Property="Template"：指定我们要修改的是控件的 Template 属性。Template 属性（控件模板）是 WPF 控件的“灵魂”和“骨架”。
+            Template 决定了控件长什么样（视觉树）。-->
+        <!--XAML 语法规定：当属性的值是一个复杂的对象（而不是简单字符串）时，必须使用 属性名.Value 这种嵌套写法。-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:RatingBadge}">
+                    <!--容器 Border-->
+                    <!--CornerRadius="18"：把矩形变成胶囊形-->
+                    <!--Background="{TemplateBinding BadgeBrush}"：动态背景色。-->
+                    <!--TemplateBinding 是一种高效的绑定，它把外部的 BadgeBrush 属性直接传给内部的 Background。-->
+                    <!--如果你在 XAML 里改 BadgeBrush="Red"，这里的背景立马变红。属性由上一级赋值-->
+                    <Border CornerRadius="18"
+                            Background="{TemplateBinding BadgeBrush}"
+                            Padding="12,6"
+                            SnapsToDevicePixels="True">
+                        <!--内容 TextBlock -->
+                        <!--RelativeSource={RelativeSource TemplatedParent}：这句话非常重要！它告诉绑定引擎：“不要去 ViewModel 里找 Score，要去拥有这个模板的那个控件本身（即RatingBadge）里找 Score 属性。”-->
+                        <!--StringFormat=Score: {0}：因为 Text 是字符串类型，格式化会生效。如果 Score 是 20，这里就显示 "Score: 20"。-->
+                        <!--1. 什么是 TemplatedParent？
+                            当一个 ControlTemplate（控件模板）被应用到一个控件上时，这个控件就成为了模板的 “父级” (Parent)。-->
+                        <!--模板 (Template)：就是你在 Generic.xaml 里写的这套“皮肤”。
+                        父级 (Parent)：就是你在 MainWindow.xaml 里写的那个 <controls:RatingBadge .../> 实例。
+                        所以，TemplatedParent 指的就是那个具体的 RatingBadge 对象。-->
+                        <TextBlock HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Foreground="White"
+                                   FontWeight="Bold"
+                                   Text="{Binding Score, RelativeSource={RelativeSource TemplatedParent}, StringFormat=Score: {0}}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
+
+<!--RelativeSou使用位置 2：MainWindow.xaml (自身绑定)-->
+<!-- Line 253 -->
+<!--TextBox ... 
+    Text="{Binding NoteText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+    ToolTip="{Binding Text, RelativeSource={RelativeSource Self}}"/>-->
+<!--模式：Self
+    含义：“去找我自己”。
+    场景：把控件的一个属性绑定到它另一个属性上。-->
+<!--TextBox 的 Text 属性绑定了 ViewModel 里的 NoteText。
+    TextBox 的 ToolTip（鼠标悬停提示）绑定了 Text。
+    效果：当你输入内容时，鼠标悬停在文本框上，提示语会实时显示你当前输入的内容。
+    为什么用 Self？ 因为 ToolTip 默认会去 DataContext 找 Text，但 MainViewModel 里没有 Text 属性。用 Self 告诉它：“别去 ViewModel 了，直接读我（TextBox）自己的 Text 属性。”-->
+    <!--🎓 RelativeSource 家族大全-->
+    <!--
+{RelativeSource AncestorType=Window}  {RelativeSource PreviousData}
+-->
