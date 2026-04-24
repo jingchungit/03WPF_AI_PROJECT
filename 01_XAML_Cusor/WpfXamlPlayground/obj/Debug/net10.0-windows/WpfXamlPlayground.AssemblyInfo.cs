@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WpfXamlPlayground")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17692db285e426ff1e0f834db535e635c9a802f0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe90910bc092389a0f08ec4e33a0d9fbc721c128")]
 [assembly: System.Reflection.AssemblyProductAttribute("WpfXamlPlayground")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WpfXamlPlayground")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
